@@ -9,10 +9,15 @@ const geoCode = (address, callback ) => {
         if(err){
             callback("Unable to connect to API", undefined)
         }
+
         else if(response.body.message === "Not Found"){
             callback("Invalid City parameter passed", undefined) 
         }
+        else if(! response.body.features[0]){
+            callback("Invalid City parameter passed. Try another search", undefined)
+        }
         else{
+            
 
             let data = response.body.features[0].center
             callback(undefined, {

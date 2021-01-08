@@ -12,7 +12,6 @@ const forcast = ({latitude, longitude, location}, callback) => {
         }
         else{
             const data = response.body
-            const {temperature, feelslike} = data.current
             const response_str = "It is currently " + data.current.temperature + " degree F. It feels like " + data.current.feelslike + " degree F. Weather description: " + data.current.weather_descriptions[0]
             callback(undefined, response_str)
             

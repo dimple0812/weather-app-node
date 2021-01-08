@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+        <link rel='stylesheet' href='/css/styles.css' />
+        <link rel='icon' href='./images/eight.jpg'/>
+        <!-- absolute path starts with / and points to root directory, relative path starts with characters. -->
+        
+    </head>
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <form>
+                <input placeholder="Location"/>
+                <button type="submit">Search</button>
+            </form>
+            <p id="success-output" class="success-style">
+            </p>
+            <p id="error-output" class='error-style'>
+            </p>
+
+        </div>
+        {{>footer}}
+        <script src="./js/app.js"></script>
+    </body>
+</html>
