@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 const forcast = require('./utils/forecast')
 
 const app = express()  // Called express method to inject express into the app
+const port = process.env.PORT || 3000 //taking port from env variable for heroku
 const publicDirPath = path.join(__dirname, '../public/')  // setting path to static files
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialPath = path.join(__dirname, '../templates/partials')
@@ -95,6 +96,6 @@ app.get('*',(req, res)=>{
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server started at port 3000')
+app.listen(port, () => {
+    console.log('Server started at port ' + port)
 })
